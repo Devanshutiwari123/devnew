@@ -81,14 +81,14 @@ def _get_alive_text_and_markup(message: Message) -> Tuple[str, Optional[InlineKe
     **__Pyrogram__**: `{versions.__pyro_version__}`"""
     if not message.client.is_bot:
         output += f"""\n
-🎖 **{versions.__license__}** | 👥 **{versions.__copyright__}** | 🧪 **[Repo]({Config.UPSTREAM_REPO})**
+🎖 **{versions.__license__}** | 👥 **{versions.__copyright__}** | 🧪 **[Repo](https://github.com/UsergeTeam/Userge)**
 """
     else:
         copy_ = "https://github.com/UsergeTeam/Userge/blob/master/LICENSE"
         markup = InlineKeyboardMarkup([
             [
                 InlineKeyboardButton(text="👥 UsergeTeam", url="https://github.com/UsergeTeam"),
-                InlineKeyboardButton(text="🧪 Repo", url=Config.UPSTREAM_REPO)
+                InlineKeyboardButton(text="🧪 Repo", url="https://github.com/UsergeTeam/Userge")
             ],
             [InlineKeyboardButton(text="🎖 GNU GPL v3.0", url=copy_)]
         ])
