@@ -109,30 +109,6 @@ _checkTriggers() {
         && quit "Invalid SUDO_TRIGGER!, You can't use $CMD_TRIGGER as SUDO_TRIGGER"
 }
 
-_checkPaths() {
-    editLastMessage "Checking Paths ..."
-    for path in $DOWN_PATH logs bin; do
-        test ! -d $path && {
-            log "\tCreating Path : ${path%/} ..."
-            mkdir -p $path
-        }
-    done
-}
-
-_checkBins() {
-    editLastMessage "Checking BINS ..."
-    declare -rA bins=(
-        [bin/megadown]="https://raw.githubusercontent.com/yshalsager/megadown/master/megadown"
-        [bin/cmrudl]="https://raw.githubusercontent.com/yshalsager/cmrudl.py/master/cmrudl.py"
-    )
-    for bin in ${!bins[@]}; do
-        test ! -f $bin && {
-            log "\tDownloading $bin ..."
-            curl -so $bin ${bins[$bin]}
-        }
-    done
-}
-
 _setupPlugins() {
     local link path tmp
     if test $(grep -P '^'$2'$' <<< $3); then
