@@ -20,7 +20,6 @@ from pyrogram import filters
 from userge import logging, logbot
 from . import versions
 
-_REPO = Repo()
 _LOG = logging.getLogger(__name__)
 logbot.reply_last_msg("Setting Configs ...")
 
