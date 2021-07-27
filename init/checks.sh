@@ -92,6 +92,17 @@ print(quote_plus("'$uNameAndPass'"))')
     DATABASE_URL=$(sed 's/$uNameAndPass/$parsedUNameAndPass/' <<< $DATABASE_URL)
 }
 
+_checkPaths() {
+    editLastMessage "Checking Paths ..."
+    for path in $DOWN_PATH logs; do
+        test ! -d $path && {
+            log "\tCreating Path : ${path%/} ..."
+            mkdir -p $path
+        }
+    done
+}
+
+
 _checkDatabase() {
     editLastMessage "Checking DATABASE_URL ..."
     local mongoErr=$(runPythonCode '
