@@ -20,7 +20,7 @@ from pyrogram.errors import (
 
 from userge.core.ext import pool
 from userge.utils import get_file_id_of_media
-from userge import userge, Message, Config, versions, get_version, logging
+from userge import userge, Message, Config, versions, logging
 
 _LOG = logging.getLogger(__name__)
 
@@ -66,7 +66,7 @@ def _get_alive_text_and_markup(message: Message) -> Tuple[str, Optional[InlineKe
     markup = None
     output = f"""
 **⏱ Uptime** : `{userge.uptime}`
-**💡 Version** : `{get_version()}`
+**💡 Version** : `Modified Beta Version`
 **⚙️ Mode** : `{_get_mode().upper()}`
 
 • **Sudo**: `{_parse_arg(Config.SUDO_ENABLED)}`
