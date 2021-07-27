@@ -137,6 +137,9 @@ def post_to_telegraph(a_title: str, content: str) -> str:
     )
     return post_page['url']
 
+# https://www.tutorialspoint.com/How-do-you-split-a-list-into-evenly-sized-chunks-in-Python
+def sublists(input_list: list, width: int = 3):
+    return [input_list[x : x + width] for x in range(0, len(input_list), width)]
 
 async def runcmd(cmd: str) -> Tuple[str, str, int, int]:
     """ run command in terminal """
