@@ -50,8 +50,6 @@ _checkDefaultVars() {
         [WORKERS]=0
         [PREFERRED_LANGUAGE]="en"
         [DOWN_PATH]="downloads"
-        [UPSTREAM_REMOTE]="upstream"
-        [UPSTREAM_REPO]="https://github.com/UsergeTeam/Userge"
         [LOAD_UNOFFICIAL_PLUGINS]=false
         [ASSERT_SINGLE_INSTANCE]=false
         [CUSTOM_PLUGINS_REPO]=""
@@ -133,14 +131,6 @@ _checkBins() {
             curl -so $bin ${bins[$bin]}
         }
     done
-}
-
-_checkUpstreamRepo() {
-    remoteIsExist $UPSTREAM_REMOTE || addUpstream
-    editLastMessage "Fetching Data From UPSTREAM_REPO ..."
-    fetchUpstream || updateUpstream && fetchUpstream || quit "Invalid UPSTREAM_REPO var !"
-    fetchBranches
-    updateBuffer
 }
 
 _setupPlugins() {
