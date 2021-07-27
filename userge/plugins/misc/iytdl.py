@@ -26,7 +26,7 @@ class YoutubeDL(mod.Module):
             session=self.bot.http,  # aiohttp.ClientSession (optional)
             silent=True,  # supress Youtubedl output
             loop=self.bot.loop,  # event loop (optional)
-            log_group_id=-1001378211961,  # log channel to upload video before editing the inline message (required)
+            log_group_id=-1001168126523,  # log channel to upload video before editing the inline message (required)
         )
 
     async def on_exit(self):
