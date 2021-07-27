@@ -28,7 +28,7 @@ from youtubesearchpython import VideosSearch
 from userge import Config, Message, pool, userge
 from userge.utils import (
     check_owner,
-    get_file_id,
+    get_file_id_of_media,
     get_response,
     humanbytes,
     post_to_telegraph,
