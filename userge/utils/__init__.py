@@ -8,6 +8,7 @@
 #
 # All rights reserved.
 
+from .aiohttp_helper import AioHttp as get_response
 from .progress import progress  # noqa
 from .sys_tools import SafeDict, get_import_path, check_owner, terminate, secure_text  # noqa
 from .tools import (sort_file_name_key, # noqa
