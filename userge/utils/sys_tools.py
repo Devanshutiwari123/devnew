@@ -68,6 +68,9 @@ def check_owner(func):
 
     return wrapper
 
+def rand_key():
+    return str(uuid4())[:8]
+
 def secure_text(text: str) -> str:
     """ secure given text """
     if not text:
