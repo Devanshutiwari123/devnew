@@ -20,7 +20,7 @@ from pyrogram.errors import (
 
 from userge.core.ext import pool
 from userge.utils import get_file_id_of_media
-from userge import userge, Message, Config, versions, get_version, logging
+from userge import userge, Message, Config, versions, logging
 
 _LOG = logging.getLogger(__name__)
 
@@ -66,7 +66,7 @@ def _get_alive_text_and_markup(message: Message) -> Tuple[str, Optional[InlineKe
     markup = None
     output = f"""
 **⏱ Uptime** : `{userge.uptime}`
-**💡 Version** : `{get_version()}`
+**💡 Version** : `Modified for railway`
 **⚙️ Mode** : `{_get_mode().upper()}`
 
 • **Sudo**: `{_parse_arg(Config.SUDO_ENABLED)}`
@@ -81,14 +81,14 @@ def _get_alive_text_and_markup(message: Message) -> Tuple[str, Optional[InlineKe
     **__Pyrogram__**: `{versions.__pyro_version__}`"""
     if not message.client.is_bot:
         output += f"""\n
-🎖 **{versions.__license__}** | 👥 **{versions.__copyright__}** | 🧪 **[Repo]({Config.UPSTREAM_REPO})**
+🎖 **{versions.__license__}** | 👥 **{versions.__copyright__}** | 🧪 **[Repo](https://github.com/UsergeTeam/Userge)**
 """
     else:
         copy_ = "https://github.com/UsergeTeam/Userge/blob/master/LICENSE"
         markup = InlineKeyboardMarkup([
             [
                 InlineKeyboardButton(text="👥 UsergeTeam", url="https://github.com/UsergeTeam"),
-                InlineKeyboardButton(text="🧪 Repo", url=Config.UPSTREAM_REPO)
+                InlineKeyboardButton(text="🧪 Repo", url="https://github.com/Userge/UsergeTeam")
             ],
             [InlineKeyboardButton(text="🎖 GNU GPL v3.0", url=copy_)]
         ])
